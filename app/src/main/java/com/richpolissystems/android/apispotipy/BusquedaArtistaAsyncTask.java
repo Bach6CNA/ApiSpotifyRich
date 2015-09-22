@@ -2,10 +2,9 @@ package com.richpolissystems.android.apispotipy;
 
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.support.annotation.NonNull;
 import android.util.Log;
 
-import java.lang.Object;
+import com.richpolissystems.android.apispotipy.domain.Artist;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -136,7 +135,7 @@ public class BusquedaArtistaAsyncTask extends AsyncTask<String, Void, List<Artis
             for (int i = 0; i < largoImages; i++) {
                 JSONObject imagenJson = images.getJSONObject(i);
                 String urlImagen = imagenJson.getString("url");
-                lista.get(cont).addImage(urlImagen);
+                //lista.get(cont).addImage(urlImagen);
             }
         }
         return lista;
@@ -148,7 +147,7 @@ public class BusquedaArtistaAsyncTask extends AsyncTask<String, Void, List<Artis
         for (int i = 0; i < artists.size(); i++) {
             Log.d(LOG_TAG, artists.get(i).getName());
             for (int cont = 0; cont < artists.get(i).getImages().size(); cont++) {
-                Log.d(LOG_TAG, artists.get(i).getImages().get(cont));
+                //Log.d(LOG_TAG, artists.get(i).getImages().get(cont));
             }
         }
     }

@@ -8,9 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.richpolissystems.android.apispotipy.domain.Artist;
 import com.squareup.picasso.Picasso;
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -47,7 +46,7 @@ public class ArtistListAdapter extends RecyclerView.Adapter<ArtistListAdapter.Ar
     public void onBindViewHolder(ArtistViewHolder viewHolder, int position) {
         Artist artista = this.artistList.get(position);
         if(artista.getImages().size()>0) {
-            viewHolder.setImageUrl(artista.getImages().get(0));
+            viewHolder.setImageUrl(artista.getImages().get(0).getUrl());
         }else{
 
         }

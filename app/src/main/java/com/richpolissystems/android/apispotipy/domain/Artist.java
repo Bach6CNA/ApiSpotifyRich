@@ -2,16 +2,33 @@ package com.richpolissystems.android.apispotipy.domain;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
+
 /**
- * Created by richpolis on 21/09/15.
+ * Created by richpolis on 14/09/15.
  */
 public class Artist {
-    String name;
 
-    String id;
+    @SerializedName("name")
+    public String name;
 
-    @SerializedName("popularity")
-    int popularity;
+    @SerializedName("uri")
+    public String url;
+
+    @SerializedName("images")
+    public ArrayList<ArtistaImagenes> images;
+
+    public Artist(){
+        this.name = "";
+        this.url = "";
+        images = new ArrayList<ArtistaImagenes>();
+    }
+
+    public Artist(String name, String url) {
+        images = new ArrayList<ArtistaImagenes>();
+        this.name = name;
+        this.url = url;
+    }
 
     public String getName() {
         return name;
@@ -20,4 +37,21 @@ public class Artist {
     public void setName(String name) {
         this.name = name;
     }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public ArrayList<ArtistaImagenes> getImages() {
+        return images;
+    }
+
+    public void addImage(ArtistaImagenes imagen){
+        this.images.add(imagen);
+    }
+
 }

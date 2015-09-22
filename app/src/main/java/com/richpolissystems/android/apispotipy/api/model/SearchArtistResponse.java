@@ -3,8 +3,6 @@ package com.richpolissystems.android.apispotipy.api.model;
 import com.google.gson.annotations.SerializedName;
 import com.richpolissystems.android.apispotipy.domain.Artist;
 
-import org.json.JSONObject;
-
 import java.util.ArrayList;
 
 /**
@@ -22,5 +20,8 @@ public class SearchArtistResponse {
 
         @SerializedName("items")
         ArrayList<Artist> artistas;
+
+        @SerializedName("offset")
+        int offset;
     }
 }

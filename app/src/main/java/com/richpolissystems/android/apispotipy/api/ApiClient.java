@@ -1,7 +1,6 @@
 package com.richpolissystems.android.apispotipy.api;
 
 import com.richpolissystems.android.apispotipy.api.model.SearchArtistResponse;
-import com.richpolissystems.android.apispotipy.domain.Artist;
 
 import retrofit.Callback;
 import retrofit.RestAdapter;
@@ -29,6 +28,6 @@ public class ApiClient {
     }
 
     public static void searchArtist(String query, Callback<SearchArtistResponse> response){
-        API_SERVICE.searchArtist(query, response);
+        getInstance().searchArtist(query, response);
     }
 }
